@@ -1,40 +1,41 @@
-Thrax uses Apache hadoop (an open-source implementation of MapReduce) to
-efficiently extract a synchronous context-free grammar translation model
-for use in modern machine translation systems.
+Thrax은 Apache hadoop을 (오픈소스 MapReduce의 implementation) 이용해서,
+모던 기계번역시스템에서 사용하기 위한
+문맥에서 자유로운 문법 번역모델을 동시적, 효율적으로 추출합니다.
 
-Thrax currently has support for both Hiero-style grammars (with a single
-non-terminal symbol) and SAMT-style grammars (where non-terminal symbols are
-calculated by projecting onto the span from a target-side parse tree).
+Thrax는 현재 
+Hiero식 문법 (단일 비단말 기호-single non-terminal symbol-를 포함)과
+SAMT식 문법 (비단말 기호들-non-terminal symbols-이 도착대상 분석망-parse tree-에서 영역에 표현됨으로 계산됨).
+을 지원합니다
 
-COMPILING:
+컴파일링(COMPILING):
 
-First, you need to set two environment variables:
-$HADOOP should point to the directory where Hadoop is installed.
-$AWS_SDK should point to the directory where the Amazon Web Services SDK
-is installed.
+먼저, 두가지 환경 변수들을 설정하셔야합니다:
+$HADOOP 이 Hadoop 가 설치된 폴더를 지정해야합니다.
+$AWS_SDK 은 Amazon Web Services SDK가 설치된 폴더를 지정해야합니다.
 
-To compile, type
+컴파일하시려며, 다음을 입력(type)하세요
 
     ant
 
-This will compile all classes and package them into a jar for use on a 
-Hadoop cluster.
+그러면 Hadoop 클러스터에서 사용하기위해
+jar로 모든 클래스와 패케지가 컴파일 됩니다. 
 
-At the end of the compilation, ant should report that the build was successful.
+컴파일이 끝나면, ant 가 빌드가 성공했음을 알려줍니다.
 
-RUNNING THRAX:
-Thrax can be invoked with
+THRAX 실행:
+Thrax은 다음으로 실행하실 수 있습니다
 
-    hadoop jar $THRAX/bin/thrax.jar <configuration file>
+    hadoop jar $THRAX/bin/thrax.jar <설정파일>
 
-Some example configuration files have been included with this distribution:
+일부 예제 설정파일이 이 배포본에 포함되어있습니다:
 
     example/hiero.conf
     example/samt.conf
 
-COPYRIGHT AND LICENSE:
+저작권과 라이센스(COPYRIGHT AND LICENSE):
 Copyright (c) 2010-13 by the Thrax team:
     Jonny Weese <jonny@cs.jhu.edu>
     Juri Ganitkevitch <juri@cs.jhu.edu>
+Translated by @mireado
 
 See LICENSE.txt (included with this distribution) for the complete terms.
